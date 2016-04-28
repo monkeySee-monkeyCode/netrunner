@@ -1,0 +1,23 @@
+
+sudo npm install -g coffee-script
+sudo npm install -g bower
+sudo npm install -g stylus
+
+
+
+
+mongod
+cd data
+coffee fetch.coffee
+
+lein figwheel
+
+lein cljsbuild auto dev
+
+stylus -w src/css -o resources/public/css/
+
+lein uberjar
+
+java -jar target/netrunner-0.1.0-SNAPSHOT-standalone.jar
+
+coffee server.coffee
